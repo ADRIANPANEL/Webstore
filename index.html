@@ -3,198 +3,136 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Multi Slot Demo Premium</title>
+<title>Layanan Sosial Media</title>
 <style>
- body{background:#0d0f1a;color:white;font-family:Arial;margin:0;padding:0;text-align:center}
- h1{margin:20px 0}
- .game-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;padding:20px}
- .card{background:#161a2b;padding:20px;border-radius:14px;cursor:pointer;transition:.3s}
- .card:hover{transform:scale(1.05);background:#1f2440}
- .slot-container{display:none;padding:20px}
- .back-btn{background:#ff4444;padding:10px 20px;border:none;border-radius:8px;color:white;cursor:pointer;margin-bottom:20px}
- .reels{display:flex;justify-content:center;gap:10px;margin-top:20px}
- .reel{width:80px;height:80px;background:#111;border-radius:10px;overflow:hidden;position:relative}
- .inner{position:absolute;top:0;left:0;width:100%}
- .inner div{height:80px;display:flex;justify-content:center;align-items:center;font-size:40px}
- button.spin{margin-top:25px;padding:12px 25px;background:#00c8ff;border:none;border-radius:10px;font-size:18px;font-weight:bold;cursor:pointer}
- .result{margin-top:15px;font-size:22px}
+    body {
+        font-family: Arial, sans-serif;
+        margin:0;
+        padding:0;
+        background-color:#f4f4f4;
+    }
+    header {
+        background-color:#4CAF50;
+        color:white;
+        padding:20px;
+        text-align:center;
+    }
+    nav {
+        display:flex;
+        justify-content:center;
+        background-color:#333;
+    }
+    nav a {
+        color:white;
+        padding:14px 20px;
+        text-decoration:none;
+        text-align:center;
+    }
+    nav a:hover {
+        background-color:#ddd;
+        color:black;
+    }
+    .container {
+        padding:20px;
+        max-width:1000px;
+        margin:auto;
+    }
+    .service {
+        background-color:white;
+        padding:20px;
+        margin:10px 0;
+        border-radius:8px;
+        box-shadow:0 0 5px rgba(0,0,0,0.2);
+    }
+    form input, form textarea, form select {
+        width:100%;
+        padding:10px;
+        margin:5px 0 15px 0;
+        border:1px solid #ccc;
+        border-radius:5px;
+    }
+    form button {
+        background-color:#4CAF50;
+        color:white;
+        border:none;
+        padding:10px 20px;
+        border-radius:5px;
+        cursor:pointer;
+    }
+    form button:hover {
+        background-color:#45a049;
+    }
+    footer {
+        text-align:center;
+        padding:20px;
+        background-color:#333;
+        color:white;
+        margin-top:20px;
+    }
 </style>
 </head>
 <body>
-<h1>Multi Slot Demo — Premium Version</h1>
-<div id="menu" class="game-list">
- <div class="card" onclick="openGame('mahjong')">🀄 Mahjong Ways Demo</div>
- <div class="card" onclick="openGame('starlight')">⭐ Starlight Demo</div>
- <div class="card" onclick="openGame('olympus')">⚡ Olympus Demo</div>
- <div class="card" onclick="openGame('sweet')">🍬 Sweet Bonanza Demo</div>
- <div class="card" onclick="openGame('classic')">🎰 Classic Fruit 777</div>
+
+<header>
+    <h1>Layanan Sosial Media Profesional</h1>
+    <p>Tingkatkan kualitas konten dan engagement akun Anda</p>
+</header>
+
+<nav>
+    <a href="#services">Layanan</a>
+    <a href="#order">Pesan Sekarang</a>
+    <a href="#contact">Kontak</a>
+</nav>
+
+<div class="container" id="services">
+    <h2>Layanan Kami</h2>
+    <div class="service">
+        <h3>Desain Konten Kreatif</h3>
+        <p>Membuat postingan menarik untuk Instagram, TikTok, dan Facebook.</p>
+    </div>
+    <div class="service">
+        <h3>Optimasi Profil</h3>
+        <p>Analisis dan saran untuk meningkatkan performa akun sosial media Anda.</p>
+    </div>
+    <div class="service">
+        <h3>Scheduler & Auto-Posting</h3>
+        <p>Jadwalkan postingan secara otomatis agar akun tetap aktif.</p>
+    </div>
 </div>
 
-<div id="game" class="slot-container">
- <button class="back-btn" onclick="backMenu()">Kembali</button>
- <h2 id="title"></h2>
- <div class="reels">
-   <div class="reel"><div class="inner" id="r1"></div></div>
-   <div class="reel"><div class="inner" id="r2"></div></div>
-   <div class="reel"><div class="inner" id="r3"></div></div>
-   <div class="reel"><div class="inner" id="r4"></div></div>
-   <div class="reel"><div class="inner" id="r5"></div></div>
- </div>
- <button class="spin" onclick="spin()">SPIN</button>
- <div class="result" id="result"></div>
+<div class="container" id="order">
+    <h2>Form Pemesanan Layanan</h2>
+    <form>
+        <label>Nama Lengkap</label>
+        <input type="text" placeholder="Masukkan nama lengkap" required>
+
+        <label>Email</label>
+        <input type="email" placeholder="Masukkan email" required>
+
+        <label>Layanan yang dipilih</label>
+        <select required>
+            <option value="">-- Pilih Layanan --</option>
+            <option value="desain">Desain Konten Kreatif</option>
+            <option value="optimasi">Optimasi Profil</option>
+            <option value="scheduler">Scheduler & Auto-Posting</option>
+        </select>
+
+        <label>Pesan Tambahan</label>
+        <textarea placeholder="Masukkan detail tambahan"></textarea>
+
+        <button type="submit">Kirim Pesanan</button>
+    </form>
 </div>
 
-<script>
-let currentSet = [];
-
-const sets = {
- mahjong:["🀄","🀅","🀆","🀇","🀈","🀉","🀊"],
- starlight:["💫","💖","⭐","🌙","🔮","✨","👑"],
- olympus:["⚡","🏛️","👁️","💎","🔥","🌩️","🌀"],
- sweet:["🍬","🍭","🍉","🍇","🍓","🍎","💎"],
- classic:["🍒","🍋","⭐","🍇","🔔","7️⃣","💎"],
-};
-
-function openGame(type){
- document.getElementById("menu").style.display = "none";
- document.getElementById("game").style.display = "block";
- document.getElementById("title").textContent = type.toUpperCase();
- currentSet = sets[type];
-}
-
-function backMenu(){
- document.getElementById("menu").style.display = "grid";
- document.getElementById("game").style.display = "none";
- document.getElementById("result").textContent = "";
-}
-
-function fillReel(id){
- let html="";
- for(let i=0;i<40;i++){
-   html+=`<div>${currentSet[Math.floor(Math.random()*currentSet.length)]}</div>`;
- }
- document.getElementById(id).innerHTML=html;
-}
-
-async function spin(){
- document.getElementById("result").textContent="Spinning...";
- const reels=["r1","r2","r3","r4","r5"];
- reels.forEach(r=>fillReel(r));
-
- let targets = reels.map(()=>Math.floor(Math.random()*currentSet.length));
-
- await Promise.all(reels.map((id,i)=>spinReel(id,targets[i])));
-
- const symbols = targets.map(i=>currentSet[i]);
- const allSame = symbols.every(s=>s===symbols[0]);
- const anyThree = symbols.filter((v,i,a)=>a.indexOf(v)!=i).length>=3;
-
- if(allSame) result.textContent="JACKPOT MEGA WIN!!!";
- else if(anyThree) result.textContent="Menang kecil!";
- else result.textContent="Belum beruntung";
-}
-
-function spinReel(id, target){
- return new Promise(resolve=>{
-   const el=document.getElementById(id);
-   const h=80;
-   const total=40*h*5;
-   const final=target*h;
-   el.style.transition="transform 4s cubic-bezier(.1,.1,.1,1)";
-   el.style.transform=`translateY(-${total+final}px)`;
-   setTimeout(()=>{
-     el.style.transition="none";
-     el.style.transform=`translateY(-${final}px)`;
-     resolve();
-   },4000);
- });
-}
-</script>
-
-<div id="admin" style="display:none;padding:20px;text-align:center">
- <h2>Admin Panel Demo</h2>
- <label>RTP Simulasi (%): </label>
- <input id="rtp" type="number" value="96" min="1" max="100" style="padding:5px;width:80px"><br><br>
- <button onclick="saveRTP()" style="padding:10px 20px;border:none;border-radius:8px;background:#00ff99;color:#000;font-weight:bold">Simpan RTP</button>
- <p id="adminMsg"></p>
- <button class="back-btn" onclick="backMenu()">Kembali ke Menu</button>
+<div class="container" id="contact">
+    <h2>Kontak Kami</h2>
+    <p>Email: info@sosmedpro.com</p>
+    <p>WhatsApp: +62 812-3456-7890</p>
 </div>
-<script>
-let RTP = 96;
-function saveRTP(){
- RTP = document.getElementById('rtp').value;
- document.getElementById('adminMsg').textContent = "RTP disimpan! (Simulasi)";
-}
-function openGame(type){
- if(type==='admin'){document.getElementById('menu').style.display='none';document.getElementById('admin').style.display='block';return}
- document.getElementById('menu').style.display='none';document.getElementById('game').style.display='block';document.getElementById('title').textContent=type.toUpperCase();currentSet=sets[type];
-}
-const oldSpin=spin;
-spin=async()=>{
- document.getElementById("result").textContent="Spinning...";
- const winChance = RTP/100;
- const forceWin=Math.random()<winChance;
- const reels=["r1","r2","r3","r4","r5"];reels.forEach(r=>fillReel(r));
- let targets;
- if(forceWin){
-   const pick=Math.floor(Math.random()*currentSet.length);
-   targets=[pick,pick,pick,pick,pick];
- } else {
-   targets=reels.map(()=>Math.floor(Math.random()*currentSet.length));
- }
- await Promise.all(reels.map((id,i)=>spinReel(id,targets[i])));
- const symbols = targets.map(i=>currentSet[i]);
- const allSame = symbols.every(s=>s===symbols[0]);
- const anyThree = symbols.filter((v,i,a)=>a.indexOf(v)!=i).length>=3;
- if(allSame) result.textContent="JACKPOT MEGA WIN!!!";
- else if(anyThree) result.textContent="Menang kecil!";
- else result.textContent="Belum beruntung";
-};
-</script><div id="balanceBox" style="position:fixed;top:10px;right:10px;background:#1a1f2e;padding:10px 15px;border-radius:10px;font-size:18px;">Saldo Demo: <span id="balance">10000</span></div>
 
-<script>
-let balance = 10000;
+<footer>
+    &copy; 2025 Layanan Sosial Media Profesional
+</footer>
 
-function updateBalance(){ document.getElementById('balance').textContent = balance; }
-
-function addDemoSaldo(){ balance += 5000; updateBalance(); alert('Saldo demo bertambah +5000'); }
-
-// Tambahkan tombol topup demo pada menu
-const topupBtn = document.createElement('div');
-topupBtn.className = 'card';
-topupBtn.textContent = '💰 Tambah Saldo Demo +5000';
-topupBtn.onclick = addDemoSaldo;
-document.getElementById('menu').appendChild(topupBtn);
-
-// Admin saldo: tambahkan opsi di panel admin
-const adminDiv = document.getElementById('admin');
-const saldoControl = document.createElement('div');
-saldoControl.innerHTML = `
- <h3>Atur Saldo User Demo</h3>
- <input id="setSaldo" type="number" value="10000" style="padding:5px;width:100px">
- <button onclick="saveSaldo()" style="padding:8px 15px;margin-left:10px;background:#ffaa00;border:none;border-radius:8px;font-weight:bold">Set Saldo</button>
- <p id="saldoMsg"></p>
-`;
-adminDiv.appendChild(saldoControl);
-
-function saveSaldo(){
- balance = parseInt(document.getElementById('setSaldo').value);
- updateBalance();
- document.getElementById('saldoMsg').textContent = 'Saldo user diperbarui! (Demo)';
-}
-
-// Integrasi saldo dengan spin
-const oldSpinFunc = spin;
-spin = async ()=>{
- if(balance < 100){ alert('Saldo demo tidak cukup!'); return; }
- balance -= 100; updateBalance();
- await oldSpinFunc();
- if(document.getElementById('result').textContent.includes('JACKPOT')) balance += 2000;
- else if(document.getElementById('result').textContent.includes('kecil')) balance += 400;
- updateBalance();
-};
-
-updateBalance();
-</script>
 </body>
 </html>
