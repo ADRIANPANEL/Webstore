@@ -3,74 +3,86 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Crypto Dashboard</title>
+  <title>Crypto Admin Panel</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #0d0f16;
-      color: #fff;
       margin: 0;
-      padding: 0;
+      font-family: Arial, sans-serif;
+      background: #0e1117;
+      color: #fff;
+      display: flex;
     }
-    header {
-      background: #111520;
+    .sidebar {
+      width: 240px;
+      background: #131722;
+      height: 100vh;
       padding: 20px;
+    }
+    .sidebar h2 {
+      margin-top: 0;
+      font-size: 22px;
       text-align: center;
-      font-size: 28px;
-      font-weight: bold;
+    }
+    .sidebar a {
+      display: block;
+      color: #aaa;
+      padding: 12px;
+      text-decoration: none;
+      margin-top: 10px;
+      border-radius: 8px;
+    }
+    .sidebar a:hover {
+      background: #1c2233;
+      color: #fff;
+    }
+    .content {
+      flex: 1;
+      padding: 25px;
     }
     .card {
-      background: #151a28;
+      background: #171c28;
       padding: 20px;
-      margin: 20px;
       border-radius: 12px;
+      margin-bottom: 20px;
     }
-    .crypto-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 20px;
+    table {
+      width: 100%;
+      border-collapse: collapse;
     }
-    .coin {
+    table th, table td {
+      padding: 12px;
+      border-bottom: 1px solid #2a3042;
+      text-align: left;
+    }
+    table th {
       background: #1c2233;
-      padding: 15px;
-      border-radius: 10px;
-      text-align: center;
     }
-    .coin h3 {
-      margin: 0 0 10px;
+    .btn {
+      background: #3b82f6;
+      padding: 8px 12px;
+      border-radius: 8px;
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
     }
-    footer {
-      text-align: center;
-      padding: 20px;
-      color: #777;
-      margin-top: 20px;
+    .btn:hover {
+      background: #2563eb;
     }
   </style>
 </head>
 <body>
-  <header>Crypto Dashboard</header>
 
-  <div class="card">
-    <h2>Top Coins</h2>
-    <div class="crypto-list">
-      <div class="coin">
-        <h3>Bitcoin</h3>
-        <p>BTC</p>
-        <p>Harga: $67,000</p>
-      </div>
-      <div class="coin">
-        <h3>Ethereum</h3>
-        <p>ETH</p>
-        <p>Harga: $3,500</p>
-      </div>
-      <div class="coin">
-        <h3>Solana</h3>
-        <p>SOL</p>
-        <p>Harga: $150</p>
-      </div>
-    </div>
+  <div class="sidebar">
+    <h2>Admin Crypto</h2>
+    <a href="#">Dashboard</a>
+    <a href="#">Kelola Coin</a>
+    <a href="#">Deposit User</a>
+    <a href="#">Withdraw User</a>
+    <a href="#">Pengaturan</a>
   </div>
 
-  <footer>© 2025 Crypto Dashboard</footer>
-</body>
-</html>
+  <div class="content">
+    <h1>Dashboard</h1>
+
+    <div class="card">
+      <
