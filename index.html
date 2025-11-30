@@ -1,96 +1,76 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Toko Top Up Game</title>
+  <title>Crypto Dashboard</title>
   <style>
-    body { margin: 0; font-family: Arial; background: #f3f4f6; }
-    header { background: #1e63ff; padding: 18px; color: white; text-align: center; font-size: 24px; font-weight: bold; }
-
-    .container { padding: 20px; }
-    .game-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 20px; }
-
-    .game { background: white; padding: 15px; border-radius: 12px; text-align: center; box-shadow: 0 0 10px rgba(0,0,0,0.1); cursor: pointer; }
-    .game img { width: 100%; border-radius: 10px; }
-    .game h3 { margin: 10px 0 5px; font-size: 18px; }
-
-    .form-box { background: white; padding: 20px; border-radius: 12px; margin-top: 25px; display: none; box-shadow: 0 0 10px rgba(0,0,0,0.08); }
-    .form-box input, select { width: 100%; padding: 10px; margin: 10px 0; border-radius: 8px; border: 1px solid #ccc; }
-
-    button { background: #1e63ff; color: white; padding: 12px; border: none; border-radius: 10px; cursor: pointer; width: 100%; font-size: 16px; }
+    body {
+      font-family: Arial, sans-serif;
+      background: #0d0f16;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #111520;
+      padding: 20px;
+      text-align: center;
+      font-size: 28px;
+      font-weight: bold;
+    }
+    .card {
+      background: #151a28;
+      padding: 20px;
+      margin: 20px;
+      border-radius: 12px;
+    }
+    .crypto-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .coin {
+      background: #1c2233;
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+    }
+    .coin h3 {
+      margin: 0 0 10px;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #777;
+      margin-top: 20px;
+    }
   </style>
 </head>
 <body>
-  <header>Toko Top Up Game</header>
+  <header>Crypto Dashboard</header>
 
-  <div class="container">
-    <h2>Pilih Game</h2>
-    <div class="game-list">
-      <div class="game" onclick="selectGame('Mobile Legends')">
-        <img src="https://via.placeholder.com/200" />
-        <h3>Mobile Legends</h3>
+  <div class="card">
+    <h2>Top Coins</h2>
+    <div class="crypto-list">
+      <div class="coin">
+        <h3>Bitcoin</h3>
+        <p>BTC</p>
+        <p>Harga: $67,000</p>
       </div>
-
-      <div class="game" onclick="selectGame('Free Fire')">
-        <img src="https://via.placeholder.com/200" />
-        <h3>Free Fire</h3>
+      <div class="coin">
+        <h3>Ethereum</h3>
+        <p>ETH</p>
+        <p>Harga: $3,500</p>
       </div>
-
-      <div class="game" onclick="selectGame('PUBG Mobile')">
-        <img src="https://via.placeholder.com/200" />
-        <h3>PUBG Mobile</h3>
+      <div class="coin">
+        <h3>Solana</h3>
+        <p>SOL</p>
+        <p>Harga: $150</p>
       </div>
-
-      <div class="game" onclick="selectGame('Genshin Impact')">
-        <img src="https://via.placeholder.com/200" />
-        <h3>Genshin Impact</h3>
-      </div>
-    </div>
-
-    <div id="form" class="form-box">
-      <h3 id="gamename"></h3>
-
-      <label>ID Game</label>
-      <input type="text" id="userid" placeholder="Masukkan User ID" />
-
-      <label>Pilih Nominal</label>
-      <select id="nominal">
-        <option value="">-- Pilih Nominal --</option>
-        <option value="1000">50 Diamonds - Rp10.000</option>
-        <option value="25000">250 Diamonds - Rp25.000</option>
-        <option value="50000">500 Diamonds - Rp50.000</option>
-      </select>
-
-      <button onclick="checkout()">Checkout</button>
     </div>
   </div>
 
-  <script>
-    let selectedGame = "";
-
-    function selectGame(game) {
-      selectedGame = game;
-      document.getElementById("gamename").innerText = "Top Up " + game;
-      document.getElementById("form").style.display = "block";
-      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
-    }
-
-    function checkout() {
-      let uid = document.getElementById("userid").value;
-      let nominal = document.getElementById("nominal").value;
-
-      if (!uid || !nominal) return alert("Tolong isi semua data!");
-
-      alert(
-        "Pesanan Anda:\n" +
-        "Game: " + selectedGame + "\n" +
-        "User ID: " + uid + "\n" +
-        "Nominal: Rp" + nominal + "\n\n" +
-        "Silakan lanjut ke pembayaran!"
-      );
-    }
-  </script>
-
+  <footer>© 2025 Crypto Dashboard</footer>
 </body>
 </html>
